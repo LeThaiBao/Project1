@@ -6,12 +6,18 @@
     <title>LeThaiBao</title>
   </head>
   <body>
+    <ul>
+      <li><a href="#" class="click">Click vào đây</a></li>
+      <li><a href="#">Click vào đây</a></li>
+      <li><a href="#" class="click">Click vào đây</a></li>
+    </ul>
     <script>
-      for (let i = 0; i < 10; i++) {
-        for (let j = 0; j < 10; j++) {
-          document.write(`([` + i + `][` + j + `])`);
-        }
-        document.write(`<br/>`);
+      var button = document.getElementsByClassName("click");
+      for (var i = 0; i < button.length; i++) {
+        button[i].onclick = function () {
+          alert(`Bạn vừa click vào đây`);
+          return false;
+        };
       }
     </script>
   </body>

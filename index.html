@@ -6,19 +6,24 @@
     <title>LeThaiBao</title>
   </head>
   <body>
-    <ul>
-      <li><a href="#" class="click">Click vào đây</a></li>
-      <li><a href="#">Click vào đây</a></li>
-      <li><a href="#" class="click">Click vào đây</a></li>
-    </ul>
     <script>
-      var button = document.getElementsByClassName("click");
-      for (var i = 0; i < button.length; i++) {
-        button[i].onclick = function () {
-          alert(`Bạn vừa click vào đây`);
-          return false;
-        };
+      function cv_dt_hcn(){
+        var chieu_dai=document.getElementById(`chieu_dai`);
+        var chieu_rong=document.getElementById(`chieu_rong`);
+        var chuvi=document.getElementById(`chuvi`);
+        var dientich=document.getElementById(`dientich`);
+
+        var result_chuvi=(parseInt(chieu_dai.value)+parseInt(chieu_rong.value))*2;
+        var reuslt_dientich=parseInt(chieu_dai.value)*parseInt(chieu_rong.value);
+
+        chuvi.value=result_chuvi;
+        dientich.value=reuslt_dientich;
       }
     </script>
+    <h1>Chương trình tính diện tích, chu vi hình chữ nhật</h1>
+    <p>Nhập chiều dài : <input type="text" id="chieu_dai" onkeyup="cv_dt_hcn()"></p>
+    <p>Nhập chiều rộng : <input type="text" id="chieu_rong" onkeyup="cv_dt_hcn()"></p>
+    <p>Diện tích : <input type="text" id="dientich"></p>
+    <p>Chu vi : <input type="text" id="chuvi"></p>
   </body>
 </html>
